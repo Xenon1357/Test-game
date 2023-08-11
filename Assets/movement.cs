@@ -7,16 +7,18 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
 	public float jumpforce = 10f;
 	public Rigidbody2D rb;
+	public GameObject obj;
 	public string currentcolor;
 	public Color colorblue;
 	public Color coloryellow;
 	public Color colormagenta;
 	public Color colorpurple;
 	public SpriteRenderer sr;
-	
+	public bool ismove = true;
     void Start()
     {
         setcolor();
+		ismove = true;
     }
 
     // Update is called once per frame
@@ -25,10 +27,20 @@ public class movement : MonoBehaviour
 		if (Input.GetKey(KeyCode.RightArrow) || Input.GetMouseButtonDown(0))
 		{ 
         rb.velocity = Vector2.up * jumpforce;
+		ismove = false;
+		}
+		if ((transform.position.y <= -4.5) && ismove == true)
+		{
+		rb.velocity = Vector2.up * jumpforce;	
 		}
     }
 	void OnTriggerEnter2D(Collider2D col)
-	{
+	{   if (col.tag == "colorchanger")
+		{
+			setcolor();
+			Destroy(col.gameObject);
+			
+		}
 		if(col.tag != currentcolor)
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

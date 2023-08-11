@@ -8,6 +8,7 @@ TagManager:
   - blue
   - magenta
   - purple
+  - colorchanger
   layers:
   - Default
   - TransparentFX
