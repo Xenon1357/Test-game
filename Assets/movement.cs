@@ -7,7 +7,6 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
 	public float jumpforce = 10f;
 	public Rigidbody2D rb;
-	public GameObject obj;
 	public string currentcolor;
 	public Color colorblue;
 	public Color coloryellow;
@@ -17,6 +16,7 @@ public class movement : MonoBehaviour
 	public bool ismove = true;
     void Start()
     {
+		sr = GetComponent<SpriteRenderer>();
         setcolor();
 		ismove = true;
     }
