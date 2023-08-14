@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotate : MonoBehaviour
-{   public float speed = 20f;
+public class AAPlayerScore : MonoBehaviour
+{
+    public static int i;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        i = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.Rotate(0f, 0f, speed*Time.deltaTime);
+        print(i);
     }
 }

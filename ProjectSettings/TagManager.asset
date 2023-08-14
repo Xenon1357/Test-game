@@ -9,6 +9,12 @@ TagManager:
   - magenta
   - purple
   - colorchanger
+  - AAobstacle
+  - obsticle
+  - Obstacle
+  - Head
+  - Ball
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -16,11 +22,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - ball
+  - chain
+  - wall
+  - text
   - 
   - 
   - 
